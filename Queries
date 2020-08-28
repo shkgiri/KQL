@@ -1,0 +1,4 @@
+//Extracting a field in Raw Data and use that field for correlation and reporting?
+Akamaisiem
+| extend test3= tostring(parse_csv(Message))  
+| extend realip = extract ( "[For:+](([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.(([0-9]{1,3})))" ,1, test3) 
